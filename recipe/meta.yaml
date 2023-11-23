@@ -18,6 +18,7 @@ requirements:
   host:
     - pip
     - python >=3.7
+    - setuptools
   run:
     - bioimageio.core
     - csbdeep >=0.7.2,<0.8.0
