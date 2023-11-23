@@ -1,5 +1,5 @@
 {% set name = "n2v" %}
-{% set version = "0.3.2" %}
+{% set version = "0.3.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/n2v-{{ version }}.tar.gz
-  sha256: 8662aa5e903e170a1c9769882da241d669b6e7efd8b164b68723c675539ec06f
+  sha256: 9077f2f4181f7ca52b8282b142408b095e2f2aaa946909558b1d11cef2434537
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
@@ -18,14 +18,20 @@ requirements:
   host:
     - pip
     - python >=3.7
+    - setuptools
   run:
+    - bioimageio.core
     - csbdeep >=0.7.2,<0.8.0
     - imagecodecs >=2020.2.18
+    - matplotlib-base          # Imported but not listed as requirement
     - numpy
     - pillow
     - python >=3.7
     - ruamel.yaml >=0.16.10
+    - six                      # Imported but not listed as requirement
+    - tensorflow               # Imported but not listed as requirement
     - tifffile
+    - tqdm                     # Imported but not listed as requirement
 
 test:
   imports:
@@ -37,10 +43,11 @@ test:
     - pip
 
 about:
-  home: https://github.com/juglab/n2v/
+  home: https://pypi.org/project/n2v
   summary: Noise2Void allows the training of a denoising CNN from individual noisy images. This implementationextends CSBDeep.
   license: BSD-3-Clause
   license_file: LICENSE.txt
+  dev_url: https://github.com/juglab/n2v
 
 extra:
   recipe-maintainers:
