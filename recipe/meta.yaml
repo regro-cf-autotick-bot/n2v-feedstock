@@ -42,10 +42,11 @@ test:
     - pip
 
 about:
-  home: https://github.com/juglab/n2v/
+  home: https://pypi.org/project/n2v
   summary: Noise2Void allows the training of a denoising CNN from individual noisy images. This implementationextends CSBDeep.
   license: BSD-3-Clause
   license_file: LICENSE.txt
+  dev_url: https://github.com/juglab/n2v
 
 extra:
   recipe-maintainers:
