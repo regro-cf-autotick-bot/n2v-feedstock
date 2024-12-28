@@ -6,18 +6,18 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/n2v-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/n2v-{{ version }}.tar.gz
   sha256: 9077f2f4181f7ca52b8282b142408b095e2f2aaa946909558b1d11cef2434537
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
   noarch: python
 
 requirements:
   host:
     - pip
-    - python >=3.7
+    - python {{ python_min }}
     - setuptools
   run:
     - bioimageio.core
@@ -26,7 +26,7 @@ requirements:
     - matplotlib-base          # Imported but not listed as requirement
     - numpy
     - pillow
-    - python >=3.7
+    - python >={{ python_min }}
     - ruamel.yaml >=0.16.10
     - six                      # Imported but not listed as requirement
     - tensorflow               # Imported but not listed as requirement
@@ -41,6 +41,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://pypi.org/project/n2v
