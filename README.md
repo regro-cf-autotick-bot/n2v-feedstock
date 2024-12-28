@@ -3,11 +3,13 @@ About n2v-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/n2v-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/juglab/n2v/
+Home: https://pypi.org/project/n2v
 
 Package license: BSD-3-Clause
 
 Summary: Noise2Void allows the training of a denoising CNN from individual noisy images. This implementationextends CSBDeep.
+
+Development: https://github.com/juglab/n2v
 
 Current build status
 ====================
